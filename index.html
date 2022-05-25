@@ -16,21 +16,39 @@
         <h1>00:00</h1>
     </div>
 
+      <!-- LOGIN -->
+    <div id="main">
+        <div class="hidden" id="login-form">
+            <input required maxlength="15" type="text" placeholder="What is your name?" id="login-id"/>
+            <!-- <input type="button" value="LOGIN" id="login-button"/> -->
+        </div>
+
+        <h1 id="greeting" class="hidden"></h1>
+        
+        <button class="hidden" id="logout-button"></button>
+    </div>
+
+
     <!-- todolist 입력창! -->
     <form class="js-toDoForm">
         <input type="text" placeholder="Write a to do!!">
+
     </form>
 
     <!-- todolist 목록! -->
     <ul class="js-toDoList"></ul>
 
+    <div class="weather">
+    <span class="js-icon"></span>
     <span class="js-temp"></span>
     <span class="js-location"></span>
+    </div>
 
     <script src="js/clock.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/bg.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/greeting.js"></script>
 
 </body>
 </html>

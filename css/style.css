@@ -32,12 +32,36 @@ body{
     animation: fadeIn 0.5s linear;
 }
 
-.js-temp {
+/* 날씨 설정 */
+
+.weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.js-icon{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 50px; 
+}
+.js-icon img{
+    max-width: 100px;
+    max-height: 100px;
+}
+.js-temp {
+    font-size: 40px;
+    position: absolute;
+    top: 130px;
+  
     padding: 10px 20px;
 }
+  
+.js-location {
+    font-size: 30px;
+    position: absolute;
+    top: 180px;
+    
+}
+
 
 /* 시계 설정 */
 .js-clock h1 {
@@ -45,7 +69,30 @@ body{
 }
 
 .js-clock{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+/* 로그인 */
+.hidden input[type="text"]{
+    border: none;
+    width: 600px;
+    font-size: 30px;
+    background: inherit;
+}
+.hidden input:focus{
+    outline: none;
+    color: white;
+    text-align: center;
+}
+.hidden{
+    margin-bottom: 15px;
+}
+
+#greeting{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 35px;
 }
 
 /* todolist 입력 양식 */
