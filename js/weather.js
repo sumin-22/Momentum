@@ -1,7 +1,12 @@
 const temp = document.querySelector(".js-temp");
 const loc = document.querySelector(".js-location");
+const locicon = document.querySelector(".js-icon");
+
 const API_KEY = "c83ea3b93e4df2ec21245d6494ca0f3d";
 const COORDS = "coords";
+
+
+
 
 function getWeather(lat, lng){
     fetch(
@@ -11,12 +16,15 @@ function getWeather(lat, lng){
         return response.json();
       })
       .then(function (json) {
-        const temperature = json.main.temp;
+        const {icon} = json.weather[0];
+        const temperature = Math.round(json.main.temp,0);
         const place = json.name;
-        temp.innerText = `🔅${temperature} °C`;
+        locicon.innerHTML = `<img src="icons/${icon}.png"></img>`
+        temp.innerText = `${temperature} °C`;
         loc.innerText = `${place}`;
-      });
+        });
 }
+        
 
 // local에다가 정보를 저장
 function saveCoords(coordsObj) {
