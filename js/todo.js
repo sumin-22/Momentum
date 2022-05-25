@@ -75,8 +75,15 @@ function paintToDo(text){
 
     //할일을 클릭하면 줄 긋기
     span.addEventListener('click', function(){  
-      span.style.textDecoration = "line-through";
+        if(span.style.textDecoration === "none"){
+            span.style.textDecoration = "line-through";
+        } else{
+            span.style.textDecoration = "none";
+        }
+      
     })
+
+
 
     // 페이지에 스크롤 보이지 않게 하기 위해 숫자 제한 : 7개
     if(newId < 7){
