@@ -1,6 +1,6 @@
 const temp = document.querySelector(".js-temp");
 const loc = document.querySelector(".js-location");
-const API_KEY = "fed7707c698387d0f6d2611b19caf470";
+const API_KEY = "c83ea3b93e4df2ec21245d6494ca0f3d";
 const COORDS = "coords";
 
 function getWeather(lat, lng){
@@ -11,15 +11,16 @@ function getWeather(lat, lng){
         return response.json();
       })
       .then(function (json) {
-        const temperature = json.main.temp;
+        const temperature = (json.main.temp).substr(0,2);
         const place = json.name;
-        temp.innerText = `🔅${temperature}`;
+        temp.innerText = `🔅${temperature} °C`;
         loc.innerText = `${place}`;
       });
 }
 
+// local에다가 정보를 저장
 function saveCoords(coordsObj) {
-    localStorage.setItem(COORDS, json.stringify(coordsObj));
+    localStorage.setItem(COORDS, JSON.stringify(coordsObj));
 }
 
 function handleGeoSuccess(position){
@@ -40,7 +41,7 @@ function handleGeoError() {
   function askForCoords() {
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
   }
-  
+
   function loadCoords() {
     const loadedCoords = localStorage.getItem(COORDS);
     if (loadedCoords === null) {
