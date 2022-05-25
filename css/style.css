@@ -32,6 +32,13 @@ body{
     animation: fadeIn 0.5s linear;
 }
 
+.js-temp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+}
+
 /* 시계 설정 */
 .js-clock h1 {
     font-size: 160px;
